@@ -6,6 +6,7 @@ import java.math.BigInteger;
  * χρησιμοποιει την κλαση BigInteger ωστε να μην εχουμε
  * υπερχειλιση (overflow).
  */
+
 public class BigIntegerApp {
     public static void main(String[] args) {
         BigInteger myBigNum1 = new BigInteger("123456783213277713219");

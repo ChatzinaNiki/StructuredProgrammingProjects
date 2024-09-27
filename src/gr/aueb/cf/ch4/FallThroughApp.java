@@ -6,9 +6,9 @@ public class FallThroughApp {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        int grade = 0;
+        int grade;
 
-        System.out.println("Please insert a grade");
+        System.out.println("Παρακαλώ εισάγετε έναν βαθμό από το 1 έως το 10");
         grade = in.nextInt();
 
 
@@ -28,13 +28,14 @@ public class FallThroughApp {
             case 7:
             case 8:
                 System.out.println("Λίαν Καλώς");
-
+                break;
             case 9:
             case 10:
                 System.out.println("Άριστα");
+                break;
 
             default:
-                System.out.println("Δώστε έναν βαθμό μεταξύ 1-10");
+                System.out.println("Σφάλμα. Δώστε έναν βαθμό μεταξύ 1-10");
                 break;
         }
     }

@@ -2,9 +2,6 @@ package gr.aueb.cf.ch5;
 
 import java.math.BigDecimal;
 
-git commit
-F C -
-
 public class BigDecimalApp {
     public static void main(String[] args) {
         BigDecimal actual = new BigDecimal("0.0");
@@ -22,4 +19,5 @@ public class BigDecimalApp {
             System.out.println("NOT EQUAL");
         }
     }
-}:\Users\chatz\AppData\Local\Temp\git-commit-msg-.txt --signoff --author="Your Name <your.email@example.com>"
+}
+

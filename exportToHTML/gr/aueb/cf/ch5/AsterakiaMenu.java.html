@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>AsterakiaMenu.java</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <style type="text/css">
+        .s0 { color: #cc7832;}
+        .s1 { color: #a9b7c6;}
+        .s2 { color: #6897bb;}
+        .s3 { color: #6a8759;}
+        .s4 { color: #808080;}
+    </style>
+</head>
+<body bgcolor="#2b2b2b">
+<table BGCOLOR="#606060" CELLPADDING=5 CELLSPACING=0 COLS=1 WIDTH="100%">
+    <tr>
+        <td>
+            <center>
+                <font color="#000000" face="Arial, Helvetica">
+                    AsterakiaMenu.java</font>
+            </center>
+        </td>
+    </tr>
+</table>
+<pre><span class="s0">package </span><span class="s1">gr.aueb.cf.ch5</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">AsterakiaMenu {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span
+            class="s0">;</span>
+        <span class="s0">int </span><span class="s1">choice = </span><span class="s2">0</span><span class="s0">;</span>
+
+        <span class="s0">while </span><span class="s1">(choice != </span><span class="s2">6</span><span
+            class="s1">) {</span>
+            <span class="s1">displayMenu()</span><span class="s0">;</span>
+            <span class="s1">System.out.print(</span><span class="s3">&quot;Δώσε επιλογή: &quot;</span><span class="s1">)</span><span
+            class="s0">;</span>
+            <span class="s1">choice = scanner.nextInt()</span><span class="s0">;</span>
+
+            <span class="s0">if </span><span class="s1">(choice != </span><span class="s2">6</span><span
+            class="s1">) {</span>
+                <span class="s1">System.out.print(</span><span
+            class="s3">&quot;Δώστε αριθμό για αστεράκια: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">n = scanner.nextInt()</span><span class="s0">;</span>
+
+                <span class="s0">switch </span><span class="s1">(choice) {</span>
+                    <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                        <span class="s1">printHorizontalStars(n)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                        <span class="s1">printVerticalStars(n)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                        <span class="s1">printSquareOfStars(n)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                        <span class="s1">printAscendingTriangleStars(n)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">5</span><span class="s1">:</span>
+                        <span class="s1">printDescendingTriangleStars(n)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">default</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span
+            class="s3">&quot;Μη έγκυρη επιλογή.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Έξοδος από το πρόγραμμα.&quot;</span><span
+            class="s1">)</span><span class="s0">;</span>
+        <span class="s1">scanner.close()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση του μενού</span>
+    <span class="s0">public static void </span><span class="s1">displayMenu() {</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Μενού επιλογών:&quot;</span><span
+            class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Εμφάνισε n αστεράκια οριζόντια&quot;</span><span
+            class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span
+            class="s3">&quot;2. Εμφάνισε n αστεράκια κάθετα&quot;</span><span class="s1">)</span><span
+            class="s0">;</span>
+        <span class="s1">System.out.println(</span><span
+            class="s3">&quot;3. Εμφάνισε n γραμμές με n αστεράκια&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span
+            class="s3">&quot;4. Εμφάνισε n γραμμές με αστεράκια 1 – n&quot;</span><span class="s1">)</span><span
+            class="s0">;</span>
+        <span class="s1">System.out.println(</span><span
+            class="s3">&quot;5. Εμφάνισε n γραμμές με αστεράκια n – 1&quot;</span><span class="s1">)</span><span
+            class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;6. Έξοδος από το πρόγραμμα&quot;</span><span
+            class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση n αστεριών οριζόντια</span>
+    <span class="s0">public static void </span><span class="s1">printHorizontalStars(</span><span class="s0">int </span><span
+            class="s1">n) {</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span
+            class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span
+            class="s1">i &lt; n</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">System.out.print(</span><span class="s3">&quot;*&quot;</span><span class="s1">)</span><span
+            class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση n αστεριών κάθετα</span>
+    <span class="s0">public static void </span><span class="s1">printVerticalStars(</span><span
+            class="s0">int </span><span class="s1">n) {</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span
+            class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span
+            class="s1">i &lt; n</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;*&quot;</span><span
+            class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση n γραμμών με n αστεράκια</span>
+    <span class="s0">public static void </span><span class="s1">printSquareOfStars(</span><span
+            class="s0">int </span><span class="s1">n) {</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span
+            class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span
+            class="s1">i &lt; n</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">printHorizontalStars(n)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση n γραμμών με αστεράκια 1 – n</span>
+    <span class="s0">public static void </span><span class="s1">printAscendingTriangleStars(</span><span
+            class="s0">int </span><span class="s1">n) {</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span
+            class="s1">i = </span><span class="s2">1</span><span class="s0">; </span><span
+            class="s1">i &lt;= n</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">printHorizontalStars(i)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s4">// Μέθοδος για εμφάνιση n γραμμών με αστεράκια n – 1</span>
+    <span class="s0">public static void </span><span class="s1">printDescendingTriangleStars(</span><span
+            class="s0">int </span><span class="s1">n) {</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span
+            class="s1">i = n</span><span class="s0">; </span><span class="s1">i &gt; </span><span
+            class="s2">0</span><span class="s0">; </span><span class="s1">i--) {</span>
+            <span class="s1">printHorizontalStars(i)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
